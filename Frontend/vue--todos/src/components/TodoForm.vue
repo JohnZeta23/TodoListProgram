@@ -9,26 +9,6 @@
     </el-form>
 </template>
 
-<script lang="ts">
-import { ElMessage } from 'element-plus';
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" src="../components/Scripts/TodoForm">
 
-@Options({})
-export default class TodoForm extends Vue{
-    formInput = {title: "" , completed: false};
-
-    onSubmit(){
-        if(this.formInput.title.length > 3){
-        this.$emit('send-message', this.formInput)
-        }else{
-            ElMessage({
-                message : "Advertencia: Esta tarea es muy corta. Dito' vago ",
-                type : "warning"
-            })
-        }
-        this.formInput.title = "";
-    }
-}
 </script>
-
-
